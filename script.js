@@ -53,7 +53,7 @@ function processImage(file, conversionTable) {
             const imageData = ctx.getImageData(0, 0, img.width, img.height);
             const data = imageData.data;
 
-            const xTargets = [238, 471, 705, 939]; // 検出するX座標
+            const xTargets = [238, 471, 705, 947]; // 検出するX座標
             let minYForX = {};
             let convertedValues = {};
 
@@ -123,6 +123,7 @@ function processImage(file, conversionTable) {
             // 出力は "1P: 数値", "2P: 数値", "3P: 数値", "4P: 数値"
             let resultsHTML = `<h2>解析結果</h2>`;
             resultsHTML += `<p>1P : ${convertedValues[238]}</p>`;
+            resultsHTML += `<p>4P : ${convertedValues[947]}</p>`;
 
             document.getElementById("result").innerHTML = resultsHTML;
         };
